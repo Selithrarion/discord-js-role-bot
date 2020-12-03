@@ -170,8 +170,10 @@ client.on('messageReactionAdd', async (reaction, user) => {
 				// const memberOtherReactions = allReactions.find()
 				// console.log(allReactions.forEach(reaction => console.log(reaction)))
 
-			memberWhoReacted.roles.add(role);
-	// 	}
+			if (!user.bot) {
+				memberWhoReacted.roles.add(role);
+			}
+	 	}
 	} catch (e) {
 		console.error(e)
 	}
